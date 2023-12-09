@@ -36,7 +36,7 @@ $border-radius: 10px;
 
 body{
     display: grid;
-    grid-template-columns: 80%;
+    grid-template-columns: 400px;
     grid-template-rows: 250px;
     justify-content: center;
     row-gap: 30px;
@@ -131,6 +131,11 @@ body{
 .report-social{
     @include category-body;
     background-color: $primary-social;
+
+    .category-icon{
+        height: 80px;
+        width: 70px;
+    }
 }
 
 .report-self-care{

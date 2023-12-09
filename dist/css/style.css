@@ -6,7 +6,7 @@
 
 body {
   display: grid;
-  grid-template-columns: 80%;
+  grid-template-columns: 400px;
   grid-template-rows: 250px;
   justify-content: center;
   row-gap: 30px;
@@ -98,6 +98,10 @@ body {
   height: 200px;
   overflow: hidden;
   background-color: hsl(264, 64%, 52%);
+}
+.report-social .category-icon {
+  height: 80px;
+  width: 70px;
 }
 
 .report-self-care {
