@@ -1,0 +1,247 @@
+$primary-user : hsl(246, 80%, 60%);
+
+$primary-work: hsl(15, 100%, 70%);
+$primary-play: hsl(195, 74%, 62%);
+$primary-study: hsl(348, 100%, 68%);
+$primary-exercise: hsl(145, 58%, 55%);
+$primary-social: hsl(264, 64%, 52%);
+$primary-self-care: hsl(43, 84%, 65%);
+
+$neutral-blue-900: hsl(226, 43%, 10%);
+$neutral-blue-700: hsl(235, 46%, 20%);
+$neutral-blue-400: hsl(235, 45%, 61%);
+$neutral-blue-200: hsl(236, 100%, 87%);
+
+$font-size: (
+    "small": 12px,
+    "title": 18px,
+    "large": 24px,
+    "hrs-large": 30px,
+    "hrs-larger": 46px
+);
+
+$font-weight: (
+    "light": 300,
+    "med": 400,
+    "bold": 500
+);
+
+*{
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+$border-radius: 10px;
+
+body{
+    display: grid;
+    grid-template-columns: 80%;
+    grid-template-rows: 250px;
+    justify-content: center;
+    row-gap: 30px;
+    background-color: $neutral-blue-900;
+    margin-top: 100px;
+}
+
+.report-user{
+    background-color: $neutral-blue-700;
+    color: $neutral-blue-200;
+    border-radius: $border-radius;
+    grid-row: span 2;
+
+    &-head{
+        background-color: $primary-user;
+        display: grid;
+        grid-template-columns: 100px 200px;
+        align-items: center;
+        justify-content: center;
+        border-radius: $border-radius;
+        width: 100%;
+        padding: 40px;
+        box-sizing: border-box;
+
+        .user-photo{
+            grid-row: span 2;
+            position: relative;
+            height: 80px;
+            width: 80px;
+            border: 4px solid white;
+            border-radius: 50px;
+        }
+
+        .user-name{
+            font-size: map-get($font-size, "large");
+            font-weight: map-get($font-weight, light);
+            color: white;
+            position: relative;
+            top: -15px;
+        }
+    }
+
+    &-date{
+        width: 100%;
+        text-align: center;
+
+        .date-button{
+            font-size: map-get($font-size, title);
+            border: none;
+            background-color: $neutral-blue-700;
+            color: $neutral-blue-200;
+            height: 80px;
+            width: 30%;
+
+            &:hover{
+                color: white;
+            }
+
+            &:focus{
+                color: $primary-user;
+            }
+        }
+    }
+}
+
+@mixin category-body{
+    border-radius: $border-radius;
+    height: 200px;
+    overflow: hidden;
+}
+
+.report-work{
+    @include category-body;
+    background-color: $primary-work;
+}
+
+.report-play{
+    @include category-body;
+    background-color: $primary-play;
+}
+
+.report-study{
+    @include category-body;
+    background-color: $primary-study;
+}
+
+.report-exercise{
+    @include category-body;
+    background-color: $primary-exercise;
+}
+
+.report-social{
+    @include category-body;
+    background-color: $primary-social;
+}
+
+.report-self-care{
+    @include category-body;
+    background-color: $primary-self-care;
+}
+
+.report-body{
+    background-color: $neutral-blue-700;
+    color: white;
+    border-radius: $border-radius;
+    height: 100px;
+    padding: 30px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+
+    &:hover{
+        background-color: $neutral-blue-400;
+        cursor: pointer;
+    }
+}
+
+.report-header{
+    font-size: map-get($font-size, title);
+    font-weight: map-get($font-weight, med);
+}
+
+.report-info{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    top: 20px;
+
+    .current-hours{
+        font-size: map-get($font-size, hrs-large);
+        font-weight: map-get($font-weight, light);
+    }
+
+    .previous-hours{
+        color: $neutral-blue-200;
+    }
+}
+
+.category-icon{
+    position: relative;
+    float: right;
+    top: -10px;
+    margin-right: 20px;
+    z-index: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+@media screen and (min-width: 600px){
+    body{
+        grid-template-columns: 15vw 15vw 15vw 15vw;
+        grid-template-rows: 250px;
+        justify-content: center;
+        column-gap: 30px;
+        row-gap: 0px;
+    }
+    
+    .report-user{
+        &-head{
+            height: 70%;
+            display: block;
+            padding: 20px;
+
+            .report-for{
+                margin-top: 30px;
+                font-size: map-get($font-size, small);
+            }
+
+            .user-name{
+                font-size: map-get($font-size, hrs-large);
+                top: 0;
+            }
+        }
+
+        &-date{
+            display: inline-block;
+            text-align: left;
+
+            .date-button{
+                padding: 20px;
+                text-align: left;
+                width: 100%;
+                height: 0;
+                font-size: map-get($font-size, small);
+            }
+        }
+    }
+
+    .report-info{
+        flex-direction: column;
+        align-items: start;
+        top: 10px;
+
+        .current-hours{
+            font-size: map-get($font-size, hrs-larger);
+            margin-bottom: 5px;
+        }
+
+        .previous-hours{
+            font-size: map-get($font-size, small);
+        }
+    }
+
+
+}
