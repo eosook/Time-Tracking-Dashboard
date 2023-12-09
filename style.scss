@@ -13,11 +13,11 @@ $neutral-blue-400: hsl(235, 45%, 61%);
 $neutral-blue-200: hsl(236, 100%, 87%);
 
 $font-size: (
-    "small": 12px,
+    "small": 14px,
     "title": 18px,
     "large": 24px,
     "hrs-large": 30px,
-    "hrs-larger": 46px
+    "hrs-larger": 42px
 );
 
 $font-weight: (
@@ -195,7 +195,7 @@ body{
 
 @media screen and (min-width: 600px){
     body{
-        grid-template-columns: 15vw 15vw 15vw 15vw;
+        grid-template-columns: 12vw 12vw 12vw 12vw;
         grid-template-rows: 250px;
         justify-content: center;
         column-gap: 30px;
